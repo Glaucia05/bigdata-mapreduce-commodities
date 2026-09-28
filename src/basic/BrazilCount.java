@@ -57,10 +57,32 @@ public class BrazilCount {
         public void map(LongWritable key, Text value, Context con)
                 throws IOException, InterruptedException {
 
-            String linha = value.toString();
-            String[] itens = linha.split(";");
+            String linha = value.toString().trim();
 
+            // Ignorar linhas vazias
+            if (linha.isEmpty()) {
+                return;
+            }
+
+            // Separar as colunas do CSV
+            String[] itens = linha.split(";", -1);
+
+            // Ignorar o cabeçalho
+            if (itens[0].trim().equalsIgnoreCase("country")) {
+                return;
+            }
+
+            // Verificar se existem as 10 colunas
+            if (itens.length != 10) {
+                return;
+            }
+
+
+            // Laço For para item da linha
             for (String i:itens){
+
+                // Se o item é igual a Brazil,
+                // manda para o reduce
                 if(i.equals("Brazil")){
                     Text chave = new Text(i);
                     IntWritable valor = new IntWritable(1);
