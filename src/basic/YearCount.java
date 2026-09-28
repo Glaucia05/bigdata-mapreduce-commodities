@@ -73,7 +73,7 @@ public class YearCount {
             }
 
             // Ignorar o cabeçalho
-            if (itens[0].trim().equalsIgnoreCase("country")) {
+            if (itens[0].trim().equalsIgnoreCase("country_or_area")) {
                 return;
             }
 

@@ -26,7 +26,7 @@ public class BrazilCount {
         Path input = new Path("in/operacoes_comerciais_inteira.csv");
 
         // arquivo de saida
-        Path output = new Path("output/brazilcount.txt");
+        Path output = new Path("output/BrazilCount.txt");
 
         // criacao do job e seu nome
         Job j = new Job(c, "brazilcount");
@@ -68,7 +68,7 @@ public class BrazilCount {
             String[] itens = linha.split(";", -1);
 
             // Ignorar o cabeçalho
-            if (itens[0].trim().equalsIgnoreCase("country")) {
+            if (itens[0].trim().equalsIgnoreCase("country_or_area")) {
                 return;
             }
 
