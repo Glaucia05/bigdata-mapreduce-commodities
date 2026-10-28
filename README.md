@@ -120,9 +120,3 @@ big-data-mapreduce-pjbl1/
 A saída de cada exercício está salva em arquivo `.txt` separado, na pasta `resultados/`.
 
 ---
-
-## Autoria
-
-**Glaucia** – [github.com/Glaucia05](https://github.com/Glaucia05)
-
-Bacharelado em Ciência da Computação – PUCPR
