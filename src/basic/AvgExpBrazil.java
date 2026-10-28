@@ -1,5 +1,8 @@
 package basic;
 
+// Valor médio das transações por ano, considerando somente as transações do
+//tipo exportação (Export) realizadas no Brasil.
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.DoubleWritable;
@@ -20,7 +23,10 @@ public class AvgExpBrazil {
         BasicConfigurator.configure();
 
         Configuration c = new Configuration();
+
+        //Basicamente, essa linha processa os argumentos recebidos pelo programa e guarda em um vetor de String os argumentos que sobraram após o Hadoop processar suas próprias opções.
         String[] files = new GenericOptionsParser(c, args).getRemainingArgs();
+
         // arquivo de entrada
         Path input = new Path("in/operacoes_comerciais_inteira.csv");
 
@@ -52,7 +58,7 @@ public class AvgExpBrazil {
 
     public static class MapForBrazilExpAvg extends Mapper<LongWritable, Text, Text, AvgWritable> {
 
-        // Funcao de map (igual ao seu)
+        // Funcao de map
         public void map(LongWritable key, Text value, Context con)
                 throws IOException, InterruptedException {
 

@@ -1,5 +1,9 @@
 package basic;
 
+
+// Valor máximo das transações por ano no Brasil, realizando a ordenação de
+//crescente, do maior valor para o menor.
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.DoubleWritable;

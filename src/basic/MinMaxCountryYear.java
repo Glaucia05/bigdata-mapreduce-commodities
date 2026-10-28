@@ -1,4 +1,6 @@
 package basic;
+// Transação com o maior e menor preço (com base na coluna amount), por ano e
+//país.
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
